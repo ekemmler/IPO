@@ -26,10 +26,8 @@ fitness <- function(param, samples = NULL)
 	return(pps)
 }	
 
-optimizeXcmsSetGA <- function(files=list.files(full.names=TRUE, ignore.case=TRUE, recursive=TRUE, pattern=c("*.mzData$", "*.mzML$"),
-                              params=getDefaultXcmsSetStartingParamsGA(), parallel=TRUE, run=30, 
-                              popSize=30, elitism=1, pcrossover=0.8, pmutation=0.2)
-{
+optimizeXcmsSetGA <- function(files=NULL, params=getDefaultXcmsSetStartingParamsGA(), parallel=TRUE, run=30, popSize=30, elitism=1, pcrossover=0.8, pmutation=0.2)
+{  
 	GA <- ga(type = "real-valued", fitness = fitness(files=files), 
 				min = c(params$min_peakwidth[1], params$max_peakwidth[1], params$ppm[1], params$snthresh[1], params$mzdiff[1]), 
 				max = c(params$min_peakwidth[2], params$max_peakwidth[2], params$ppm[2], params$snthresh[2], params$mzdiff[2]), 
