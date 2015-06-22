@@ -1,7 +1,3 @@
-library(GA)
-library(xcms)
-library(IPO)
-
 getDefaultXcmsSetStartingParamsGA <- function() 
 {    
     return(list(min_peakwidth=c(1,35), max_peakwidth=c(35,80), ppm=c(5,100),
