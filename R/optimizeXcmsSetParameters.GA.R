@@ -28,7 +28,7 @@ fitness <- function(param, samples = NULL)
 
 optimizeXcmsSetGA <- function(files=NULL, params=getDefaultXcmsSetStartingParamsGA(), parallel=TRUE, run=30, popSize=30, elitism=1, pcrossover=0.8, pmutation=0.2)
 {  
-	GA <- ga(type = "real-valued", fitness = fitness(files=files), 
+	GA <- ga(type = "real-valued", fitness = fitness(samples=files), 
 				min = c(params$min_peakwidth[1], params$max_peakwidth[1], params$ppm[1], params$snthresh[1], params$mzdiff[1]), 
 				max = c(params$min_peakwidth[2], params$max_peakwidth[2], params$ppm[2], params$snthresh[2], params$mzdiff[2]), 
 				run = run, popSize = popSize, elitism = elitism, 
@@ -38,6 +38,5 @@ optimizeXcmsSetGA <- function(files=NULL, params=getDefaultXcmsSetStartingParams
   
   plot(GA)
   summary(GA)
-  return(GA)
-							 
+  return(GA)						 
 }
