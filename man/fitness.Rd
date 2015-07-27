@@ -18,8 +18,8 @@ Calculation of fitness value for genetic Algorithm
      A list of parameters which are needed by XCMS::findPeaks.centWave. Used for non optimized parameters.
   }
   \item{nSlaves}{Number of slaves the optimization process should spawn.}
-  }
 }
+
 \details{
     This function calculates a fitness value to evaluate the given parameter settings. The XCMS function xcmsSet() is used to
 	calculate a xcmsSet which is evaluated by calcPPS(). Returns the PPS from clacPPS() as fitness value.
