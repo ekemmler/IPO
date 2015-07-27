@@ -34,7 +34,7 @@ Optimisation of peak picking parameters with genetic Algorithm by using natural,
 
   Scrucca L (2012).  GA: A Package for Genetic Algorithms in R.
   Journal of Statistical Software, 53(4), 1-37,
-  http://www.jstatsoft.org/v53/i04/
+  % http://www.jstatsoft.org/v53/i04/
 
   Smith, C.A. and Want, E.J. and O'Maille, G. and Abagyan,R. and
   Siuzdak, G.: XCMS: Processing mass spectrometry data for metabolite
