@@ -7,29 +7,29 @@ getDefaultXcmsSetStartingParamsGA <- function()
  }
 
 
-fitness <- function(param, samples = NULL, startingParam, nSlaves)
+fitness <- function(params, samples = NULL, startingParams, nSlaves)
 {
   
 	xSet <- xcmsSet(files=samples, method="centWave", 
-					      peakwidth=c(param[1], param[2]), ppm=param[3], 
-				          snthresh=param[4], mzdiff=param[5],
-				          prefilter=c(param[6], param[7]),
-				          mzCenterFun=startingParam$mzCenterFun, integrate=startingParam$integrate,
-			 	          fitgauss=startingParam$fitgauss, verbose.columns=startingParam$verbose.columns,
+					      peakwidth=c(params[1], params[2]), ppm=params[3], 
+				          snthresh=params[4], mzdiff=params[5],
+				          prefilter=c(params[6], params[7]),
+				          mzCenterFun=startingParams$mzCenterFun, integrate=startingParams$integrate,
+			 	          fitgauss=startingParams$fitgauss, verbose.columns=startingParams$verbose.columns,
 				      	  nSlaves = nSlaves)
 
 	pps <- calcPPS(xSet)[5]
 	return(pps)
 }	
 
-optimizeXcmsSetGA <- function(files=NULL, startingParams=getDefaultXcmsSetStartingParamsGA(), doparallel=TRUE, run=30, popSize=30, elitism=1, pcrossover=0.8, pmutation=0.2, nSlaves=4)
+optimizeXcmsSetGA <- function(files=NULL, startingParams=getDefaultXcmsSetStartingParamsGA(), parallel=TRUE, run=30, popSize=30, elitism=1, pcrossover=0.8, pmutation=0.2, nSlaves=4)
 {  
 	GA <- ga(type = "real-valued", fitness = fitness, samples=files, startingParam=startingParams, nSlaves=nSlaves,
 				min = c(startingParams$min_peakwidth[1], startingParams$max_peakwidth[1], startingParams$ppm[1], startingParams$snthresh[1], startingParams$mzdiff[1], startingParams$prefilter[1], startingParams$value_of_prefilter[1]), 
 				max = c(startingParams$min_peakwidth[2], startingParams$max_peakwidth[2], startingParams$ppm[2], startingParams$snthresh[2], startingParams$mzdiff[2], startingParams$prefilter[2], startingParams$value_of_prefilter[2]), 
 				run = run, popSize = popSize, elitism = elitism, 
 				pcrossover = pcrossover, pmutation = pmutation, keepBest = FALSE,
-				parallel = doparallel, monitor = plot, 
+				parallel = parallel, monitor = plot, 
 				names =c("peakwidth(min)", "peakwidth(max)","ppm", "snthresh", "mzdiff", "prefilter", "value_of_prefilter"))
   
   plot(GA)
