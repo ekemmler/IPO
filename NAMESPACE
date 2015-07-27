@@ -1,6 +1,7 @@
 import("xcms")
 import("rsm")
 import("CAMERA")
+import("GA")
 
 export("attachList")
 export("calcPPS")
@@ -43,4 +44,7 @@ export("writeRScript")
 export("writeParamsTable")
 ## export("xcmsSetExperiments")
 ## export("xcmsSetStatistic")
+export("getDefaultXcmsSetStartingParamsGA")
+export("optimizeXcmsSetGA")
+export("fitness")
 
