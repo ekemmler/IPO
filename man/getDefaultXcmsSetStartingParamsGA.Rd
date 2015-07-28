@@ -8,7 +8,8 @@
   'centWave' for the optimisation with genetic Algorithm. Per default the following parameters 
   have a defined range where optimization should start:\cr
   'centWave' parameters: 'peakwidth' (split into 'min_peakwidth' and 'max_peakwidth'), 
-  'ppm', 'mzdiff', 'snthresh', 'prefilter' (split into 'prefilter' and 'value_of_prefilter')\cr
+  'ppm', 'mzdiff', 'snthresh', 'prefilter' (split into 'prefilter' and 'value_of_prefilter').\cr
+  With 'nSlaves' it is possible to specify the number of slaves the fitness function should spawn.\cr
 }
 \usage{
 getDefaultXcmsSetStartingParams())
@@ -38,7 +39,7 @@ function() {
 return(list(min_peakwidth=c(1,35), max_peakwidth=c(35,80), ppm=c(5,100),
                 mzdiff=c(-1,1), snthresh=c(1,20), noise=0, prefilter=c(0,10), 
                 value_of_prefilter=c(50,150),  mzCenterFun="wMean", integrate=1, 
-                fitgauss=FALSE, verbose.columns=FALSE)) 
+                fitgauss=FALSE, verbose.columns=FALSE, nSlaves=1)) 
   }
 
 }

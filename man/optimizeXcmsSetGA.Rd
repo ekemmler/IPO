@@ -9,7 +9,7 @@ Optimisation of peak picking parameters with genetic Algorithm by using natural,
 }
 \usage{
     optimizeXcmsSetGA(files, startingParams=getDefaultXcmsSetStartingParamsGA(), parallel=TRUE, 
-	run=30, popSize=30, elitism=1, pcrossover=0.8, pmutation=0.2, nSlaves=4)
+	run=30, popSize=30, elitism=1, pcrossover=0.8, pmutation=0.2)
 }
 \arguments{
   \item{files}{A list of files, passed to xcmsSet().}
@@ -25,7 +25,6 @@ Optimisation of peak picking parameters with genetic Algorithm by using natural,
   \item{elitism}{Parameter of the GA package. The number of best parameter settings to keep at each iteration}
   \item{pcrossover}{Parameter of the GA package. The probability of crossover between pairs of parameter settings. Used for generating new parameter settings.}
   \item{pmutation}{Parameter of the GA package. Provides a higher variation in the parameter settings}    
-  \item{nSlaves}{Number of slaves the fitness function should spawn.}
 }
 \details{
     This function provides optimisation of centWave parameters with genetic Algorithm by using the PPS from calcPPS() as fitness value.
@@ -34,7 +33,7 @@ Optimisation of peak picking parameters with genetic Algorithm by using natural,
 
   Scrucca L (2012).  GA: A Package for Genetic Algorithms in R.
   Journal of Statistical Software, 53(4), 1-37,
-  % http://www.jstatsoft.org/v53/i04/
+  http://www.jstatsoft.org/v53/i04/
 
   Smith, C.A. and Want, E.J. and O'Maille, G. and Abagyan,R. and
   Siuzdak, G.: XCMS: Processing mass spectrometry data for metabolite
