@@ -15,7 +15,7 @@ getDefaultXcmsSetStartingParams())
 }
 \arguments{
 }
-}
+
 \details{
   * Do not delete a parameter from the list returned.\cr
   * Optimization of qualitative parameters is not supported yet.\cr
