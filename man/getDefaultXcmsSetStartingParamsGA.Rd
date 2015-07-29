@@ -7,7 +7,7 @@
   This function creates a list of parameters used in the xcmsSet.findPeak-method 
   'centWave' for the optimisation with genetic Algorithm. Per default the following parameters 
   have a defined range where optimization should start:\cr
-  'centWave' parameters: 'peakwidth' (split into 'min_peakwidth' and 'max_peakwidth'), 
+  'peakwidth' (split into 'min_peakwidth' and 'max_peakwidth'), 
   'ppm', 'mzdiff', 'snthresh', 'prefilter' (split into 'prefilter' and 'value_of_prefilter').\cr
   With 'nSlaves' it is possible to specify the number of slaves the fitness function should spawn.\cr
 }
