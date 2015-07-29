@@ -8,7 +8,7 @@ Optimisation of peak picking parameters with genetic Algorithm by using natural,
     stable 13C isotopes.
 }
 \usage{
-    optimizeXcmsSetGA(files, startingParams=getDefaultXcmsSetStartingParamsGA(), parallel=TRUE, 
+  optimizeXcmsSetGA(files, startingParams=getDefaultXcmsSetStartingParamsGA(), parallel=TRUE, 
 	run=30, popSize=30, elitism=1, pcrossover=0.8, pmutation=0.2)
 }
 \arguments{
