@@ -33,5 +33,5 @@ optimizeXcmsSetGA <- function(files=NULL, startingParams=getDefaultXcmsSetStarti
 				names =c("peakwidth(min)", "peakwidth(max)","ppm", "snthresh", "mzdiff", "prefilter", "value_of_prefilter"))
   
   plot(GA)
-  return(list(summary=summary(GA), result=GA)						 
+  return(list(summary=summary(GA), result=GA))						 
 }
