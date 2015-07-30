@@ -22,11 +22,11 @@ fitness <- function(params, samples = NULL, startingParams)
 	return(pps)
 }	
 
-optimizeXcmsSetGA <- function(files=NULL, startingParams=getDefaultXcmsSetStartingParamsGA(), parallel=TRUE, run=30, popSize=30, elitism=1, pcrossover=0.8, pmutation=0.2)
+optimizeXcmsSetGA <- function(files=NULL, params=getDefaultXcmsSetStartingParamsGA(), parallel=TRUE, run=30, popSize=30, elitism=1, pcrossover=0.8, pmutation=0.2)
 {  
-	GA <- ga(type = "real-valued", fitness = fitness, samples=files, startingParam=startingParams,
-				min = c(startingParams$min_peakwidth[1], startingParams$max_peakwidth[1], startingParams$ppm[1], startingParams$snthresh[1], startingParams$mzdiff[1], startingParams$prefilter[1], startingParams$value_of_prefilter[1]), 
-				max = c(startingParams$min_peakwidth[2], startingParams$max_peakwidth[2], startingParams$ppm[2], startingParams$snthresh[2], startingParams$mzdiff[2], startingParams$prefilter[2], startingParams$value_of_prefilter[2]), 
+	GA <- ga(type = "real-valued", fitness = fitness, samples=files, startingParam=params,
+				min = c(params$min_peakwidth[1], params$max_peakwidth[1], params$ppm[1], params$snthresh[1], params$mzdiff[1], params$prefilter[1], params$value_of_prefilter[1]), 
+				max = c(params$min_peakwidth[2], params$max_peakwidth[2], params$ppm[2], params$snthresh[2], params$mzdiff[2], params$prefilter[2], params$value_of_prefilter[2]), 
 				run = run, popSize = popSize, elitism = elitism, 
 				pcrossover = pcrossover, pmutation = pmutation, keepBest = FALSE,
 				parallel = parallel, monitor = plot, 
