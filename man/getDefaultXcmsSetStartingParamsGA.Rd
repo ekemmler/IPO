@@ -20,6 +20,10 @@ getDefaultXcmsSetStartingParams())
 \details{
   * Do not delete a parameter from the list returned.\cr
   * Optimization of qualitative parameters is not supported yet.\cr
+  * If you want to optimize additional parameter just set an lower and
+  an upper bound (e.g. params$max <- c(4,8))\cr
+  * If you dont want to optimize a parameter set a default value 
+  (e.g. params$max <- 10)
 }
 \value{
   A List of parameters for the xcmsSet.findPeak-method
