@@ -13,7 +13,7 @@
   group.density parameters: 'bw', 'minfrac', 'mzwid'\cr  
 }
 \usage{
-  getDefaultRetGroupStartingParams()
+  getDefaultRetGroupStartingParamsGA()
 }
 
 \arguments{
