@@ -47,4 +47,7 @@ export("writeParamsTable")
 export("getDefaultXcmsSetStartingParamsGA")
 export("optimizeXcmsSetGA")
 export("fitness")
+export("fitnessRG")
+export("getDefaultRetGroupStartingParamsGA")
+export("optimizeRetGroupGA")
 
