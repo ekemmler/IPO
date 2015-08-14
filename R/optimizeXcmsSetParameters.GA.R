@@ -27,7 +27,7 @@ optimizeXcmsSetGA <- function(files=NULL, params=getDefaultXcmsSetStartingParams
 	GA <- ga(type = "real-valued", fitness = fitness, samples=files, startingParam=params,
 				min = c(params$min_peakwidth[1], params$max_peakwidth[1], params$ppm[1], params$snthresh[1], params$mzdiff[1], params$prefilter[1], params$value_of_prefilter[1]), 
 				max = c(params$min_peakwidth[length(params$min_peakwidth)], params$max_peakwidth[length(params$max_peakwidth)], params$ppm[length(params$ppm)],
-				params$snsthresh[length(params$snthresh)], params$mzdiff[length(params$mzdiff)], params$prefilter[length(params$prefilter)], 
+				params$snthresh[length(params$snthresh)], params$mzdiff[length(params$mzdiff)], params$prefilter[length(params$prefilter)], 
 				params$value_of_prefilter[length(params$value_of_prefilter)]), 
 				run = run, popSize = popSize, elitism = elitism, 
 				pcrossover = pcrossover, pmutation = pmutation, keepBest = FALSE,
