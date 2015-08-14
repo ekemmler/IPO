@@ -9,7 +9,7 @@ Optimisation of peak picking parameters with genetic Algorithm by using natural,
 }
 \usage{
 optimizeXcmsSetGA(files, startingParams=getDefaultXcmsSetStartingParamsGA(), 
-  parallel=TRUE, run=30, popSize=30, elitism=1, pcrossover=0.8, pmutation=0.2)
+  parallel=TRUE, run=30, popSize=30, elitism=1, pcrossover=0.8, pmutation=0.2, maxiter=500)
 }
 \arguments{
   \item{files}{A list of files, passed to xcmsSet().}
@@ -25,6 +25,7 @@ optimizeXcmsSetGA(files, startingParams=getDefaultXcmsSetStartingParamsGA(),
   \item{elitism}{Parameter of the GA package. The number of best parameter settings to keep at each iteration}
   \item{pcrossover}{Parameter of the GA package. The probability of crossover between pairs of parameter settings. Used for generating new parameter settings.}
   \item{pmutation}{Parameter of the GA package. Provides a higher variation in the parameter settings}    
+  \item{maxiter} {Parameter of the GA package. Maximal number of iterations.}
 }
 \details{
     This function provides optimisation of centWave parameters with genetic Algorithm by using the PPS from calcPPS() as fitness value.

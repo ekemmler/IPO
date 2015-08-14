@@ -4,7 +4,7 @@ getDefaultRetGroupStartingParamsGA <- function()
 			missing=c(0,7), extra=c(0,8), smooth ="loess", span=c(0,2), family="gaussian"))  ##retcor.loess parameters
 }
 
-fitness <- function(params, xSet, startingParams) 
+fitnessRG <- function(params, xSet, startingParams) 
 {
   xSet <- group(xSet, minfrac=param[1], bw=param[2], minsamp=startingParams$minsamp, mzwid=param[3], max=startingParams$max, sleep=startingParams$sleep) 
   ## Check whether any groups were found
@@ -27,9 +27,9 @@ fitness <- function(params, xSet, startingParams)
   else{return(0)}
 }
 
-optimizeRetGroup <- function(xSet=NULL, params=getDefaultRetGroupStartingParamsGA(), parallel=TRUE, run=50, popSize=30, elitism=1, pcrossover=0.8, pmutation=0.2, maxiter=500)
+optimizeRetGroupGA <- function(xSet=NULL, params=getDefaultRetGroupStartingParamsGA(), parallel=TRUE, run=50, popSize=30, elitism=1, pcrossover=0.8, pmutation=0.2, maxiter=500)
 {
-	GA <- ga(type = "real-valued", fitness = fitness, xSet = xSet, startingParams = params,
+	GA <- ga(type = "real-valued", fitness = fitnessRG, xSet = xSet, startingParams = params,
 							 min = c(params$minfrac[1], params$bw[1], params$mzwid[1], params$missing[1], params$extra[1], params$span[1]), 
                              max = c(params$minfrac[length(params$minfrac)], params$bw[length(params$bw)], params$mzwid[length(params$mzwid)],
 							 params$missing[length(params$missing)], params$extra[length(params$extra)], params$span[length(params$span)]),
